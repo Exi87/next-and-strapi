@@ -1,10 +1,15 @@
 import React from "react";
 import Header from './heads'
-import About from './about'
+import fetch from 'isomorphic-unfetch'
 import Footer from './footer'
 import "../styles/main.css";
-export default function Home() {
+
+const  Home = ({acceuil})=> {
+
+
+  
   return (
+    
     <body className="animsition">
       <div className="page-wrapper">
     
@@ -20,6 +25,8 @@ export default function Home() {
                 <div className="slide__content js-slick-content">
                   <div className="slide-item">
                     <img
+
+                     //src={acceuil.banner.url}
                       src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606748626/junior-slide11_ra8n0q.jpg"
                       alt="Slide 1"
                     />
@@ -30,25 +37,12 @@ export default function Home() {
                     >
                       <div className="number float-left">01</div>
                       <h2 className="text" >
-                        CHAQUE IMAGE A UNE HISTOIRE À RACONTER
+                        {acceuil.sliderText}
+                        {/* CHAQUE IMAGE A UNE HISTOIRE À RACONTER */}
                       </h2>
                     </div>
                   </div>
-                  {/* <div class="slide-item">
-                                <img src="images/junior-slide2.jpg" alt="Slide 2" />
-                                <div class="slide__caption clearfix d-none d-lg-block" data-animation="fadeInUp" data-animation-delay=".1s">
-                                    <div class="number float-left">02</div>
-                                    <h2 class="text">CHAQUE IMAGE A UNE HISTOIRE À RACONTER</h2>
-                                </div>
-                            </div> */}
-                  {/* <div class="slide-item">
-                                <img src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606748626/junior-slide2_ynb8jn.jpg" alt="Slide 3" />
-                                <div class="slide__caption clearfix d-none d-lg-block" data-animation="fadeInUp" data-animation-delay=".1s">
-                                    <div class="number float-left">03</div>
-                                    <h2 class="text">photographions ce que vous aimez
-                                    </h2>
-                                </div>
-                            </div>  */}
+              
                 </div>
                 <div className="slide-arrows">
                   <i className="zmdi zmdi-arrow-left js-slick-arrow-left prev"></i>
@@ -75,16 +69,18 @@ export default function Home() {
               </div>
               <div className="content content--right">
                 <h2 className="title">
-                  LA PHOTOGRAPHIE EST UNE FORME DE VOYAGE DANS LE TEMPS
+                  {acceuil.homeTitle}
+                  {/* LA PHOTOGRAPHIE EST UNE FORME DE VOYAGE DANS LE TEMPS */}
                 </h2>
 
                 <p className="text">
-                  Sed ut perspiciatis unde omnis iste natus error sit volupta
+                  {acceuil.homeDescription}
+                  {/* Sed ut perspiciatis unde omnis iste natus error sit volupta
                   accusantium doloremque laudantium, totam rem aperi, eaque ipsa
                   quae ab illo inventore veritatis et quasi archit beatae vitae
                   dicta sunt explicabo. Nemo enim ipsam alt voluptatem quia
                   voluptas sit aspernatur aut odit aut mov fugit, sed quia
-                  consequuntur.
+                  consequuntur. */}
                 </p>
               </div>
             </div>
@@ -96,3 +92,23 @@ export default function Home() {
     </body>
   );
 }
+
+
+export async function getServerSideProps(){
+const {API_URL}=process.env
+
+   const res = await fetch('http://localhost:1337/HOME')
+  //const res = await fetch(`${API_URL}/Acceuils`)
+  
+  const data = await res.json()
+
+  return{
+    props:{
+      acceuil:data
+    }
+
+  }
+}
+export default Home
+
+

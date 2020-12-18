@@ -102,11 +102,11 @@ export default function Header(){
                       <a className="list-inline-item ">Service</a>
                     </Link> </li>
 
-                    <li className="list-inline-item">
+                    {/* <li className="list-inline-item">
 
                        <Link href="/galerie">
                               <a className="list-inline-item ">Gallerie</a>
-                        </Link> </li>
+                        </Link> </li> */}
 
                     {/* <li className="list-inline-item">
                       <a href="service.html">Service</a>

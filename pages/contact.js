@@ -5,9 +5,9 @@ import Footer from './footer'
 export default function Contact(){
 
     return(
-       <div>
+<div>
         
-            <section class="page-title js-parallax-scroll p-t-175 p-b-175 background-contact-title"  >
+    <section class="page-title js-parallax-scroll p-t-175 p-b-175 background-contact-title"  >
         <div class="bg-overlay bg-overlay--opa30"></div>
         <div class="page-title__inner">
             <div class="container">
@@ -22,25 +22,29 @@ export default function Contact(){
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="contact__image">
-                            <img src="images/contact-01.jpg" alt="Victor Umber" />
+                            <img 
+                            src="" alt="Victor Umber" />
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-info clearfix">
                             <div class="contact-info__img">
                                 <div class="contact-info__img-inner">
-                                    <img src="images/about-me-02.jpg" alt="Miracle Lens" />
+                                    <img 
+                                    src="https://res.cloudinary.com/duwas1k3k/image/upload/v1607697336/about-me-02_tobpyt.jpg"
+                                    
+                                    alt="Miracle Lens" />
                                 </div>
                             </div>
                             <div class="contact-info__content">
                                 <h3>contact info</h3>
                                 <ul class="list-unstyled contact-info__list">
                                     <li>
-                                        <i class="fas fa-home"></i>244 Ventura Blvd , Los Angeles , USA</li>
+                                        <i class="fas fa-home"></i>#33 rue la paix , Delmas 33 , HAITI</li>
                                     <li>
-                                        <i class="fas fa-phone"></i>(+24) 1344 205 6999</li>
+                                        <i class="fas fa-phone"></i>(+509) 4744 43 98</li>
                                     <li>
-                                        <i class="fas fa-envelope"></i><a href="https://freebw.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="baf9d5d4cedbd9ceefd7d8dfc8faddd7dbd3d694d9d5d7">[email&#160;protected]</a></li>
+                                        <i class="fas fa-envelope"></i><a href="merziuslouisjunior@gmail.com" class="__cf_email__" >merziuslouisjunior@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
