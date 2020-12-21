@@ -10,35 +10,43 @@ export default function ServiceLeft(props) {
                         <div class="service-3-item service-3-item--img-left clearfix">
                             <div class="image">
                                 <Link href="/galerie-fashion">
-                                <a >
-                                    <img src={props.ServiceLeftDescription.imageLeft} alt="Fashion" />
-                                </a></Link>
+                                  <a >
+                                    <img 
+                                        src={props.ServiceLeftDescription.imageLeftFashion} 
+                                          alt="Fashion"
+                                     />
+                                    </a>
+                                </Link>
                             </div>
                             <div class="content">
                                 <h2 class="title title--num1">
                                     <Link href="/galerie-fashion">
-                                        <a >fashion</a>
+                                        <a >{props.ServiceLeftDescription.fashion}</a>
                                     </Link>
 
                                 </h2>
-                                <p>{props.ServiceLeftDescription.textLeft1}</p>
+                                <p>{props.ServiceLeftDescription.fashionText}</p>
                             </div>
                         </div>
                         <div class="service-3-item service-3-item--img-left clearfix">
                             <div class="image">
                                 <Link href="/galerie-fashion">
-                                <a >
-                                    <img src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606766714/about-me-01_l8kjyt.jpg" alt="Fashion" />
-                                </a></Link>
+                                   <a >
+                                      <img
+                                            src={props.ServiceLeftDescription.imageLeftPortrait}
+                                            alt="Fashion" 
+                                        />
+                                 </a>
+                                </Link>
                             </div>
                             <div class="content">
                                 <h2 class="title title--num1">
                                     <Link href="/galerie-fashion">
-                                        <a >fashion</a>
+                                    <a >{props.ServiceLeftDescription.portrait}</a>
                                     </Link>
 
                                 </h2>
-                                <p>{props.ServiceLeftDescription.textLeft2}</p>
+                                <p>{props.ServiceLeftDescription.portraitText}</p>
                             </div>
                         </div>  
         </div>

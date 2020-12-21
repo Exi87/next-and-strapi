@@ -11,24 +11,34 @@ export default function ServiceRight(props) {
                             <div class="image">
                             <Link href="/galerie-mariage">
                                 <a >
-                                <img src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606766714/about-me-01_l8kjyt.jpg" alt="Fashion" />
+                                <img 
+                                
+                                src={props.ServiceRightDescription.imageRightMariage}
+
+                                
+                                alt="Fashion" />
                                 </a>
                             </Link>
                             </div>
                             <div class="content">
                                 <h2 class="title title--num2">
                                 <Link href="/galerie-mariage">
-                                        <a >Mariage</a>
+                                <a >{props.ServiceRightDescription.mariage}</a>
                                     </Link>
                                 </h2>
-                                <p>{props.textRight1}</p>
+                                <p>{props.ServiceRightDescription.mariageText}</p>
                             </div>
                         </div>
                          <div class="service-3-item service-3-item--img-right clearfix">
                             <div class="image">
                                 <Link href="galerie-event">
                                 <a >
-                                <img src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606766714/about-me-01_l8kjyt.jpg" alt="Fashion" />
+                                <img 
+                                
+                                src={props.ServiceRightDescription.imageRightEvent}
+
+                                
+                                alt="Fashion" />
 
                                 </a>
                                 </Link>
@@ -37,10 +47,10 @@ export default function ServiceRight(props) {
                             <div class="content">
                                 <h2 class="title title--num4">
                                 <Link href="/galerie-event">
-                                        <a >Event</a>
+                                <a >{props.ServiceRightDescription.event}</a>
                                     </Link>
                                 </h2>
-                                <p>{props.textRight2}</p>
+                                <p><a >{props.ServiceRightDescription.eventText}</a></p>
                             </div>
                         </div> 
         </div>

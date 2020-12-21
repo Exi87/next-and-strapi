@@ -6,7 +6,7 @@ import "../styles/main.css";
 
 const  Home = ({acceuil})=> {
 
-
+console.log(acceuil);
   
   return (
     
@@ -26,8 +26,8 @@ const  Home = ({acceuil})=> {
                   <div className="slide-item">
                     <img
 
-                     //src={acceuil.banner.url}
-                      src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606748626/junior-slide11_ra8n0q.jpg"
+                     src={acceuil.slider1Image.url}
+                      //src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606748626/junior-slide11_ra8n0q.jpg"
                       alt="Slide 1"
                     />
                     <div
@@ -95,10 +95,10 @@ const  Home = ({acceuil})=> {
 
 
 export async function getServerSideProps(){
-const {API_URL}=process.env
+//const {API_URL}=process.env
 
-   const res = await fetch('http://localhost:1337/HOME')
-  //const res = await fetch(`${API_URL}/Acceuils`)
+   const res = await fetch('http://localhost:1337/home')
+  //const res = await fetch(`${API_URL}/home`)
   
   const data = await res.json()
 

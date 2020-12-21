@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 const  About =({about}) =>{
-    console.log(about);
+    //console.log(about.coverImage.url);
 
     return(
 <div>
@@ -25,7 +25,10 @@ const  About =({about}) =>{
             <div class="row no-gutters">
                 <div class="col-lg-4 col-lg-4--wider">
                     <div class="about-me-1__image">
-                        <img src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606766714/about-me-01_l8kjyt.jpg" alt="Victor Umber" />
+                        <img 
+                        src={about.coverImage.url}
+                         alt="Victor Umber" 
+                         />
                     </div>
                 </div>
                 <div class="col-lg-7 offset-lg-1 offset-lg--padding-70">
@@ -101,7 +104,7 @@ const  About =({about}) =>{
 export async function getServerSideProps(){
    
     
-       const res = await fetch('http://localhost:1337/About')
+       const res = await fetch('http://localhost:1337/about')
       //const res = await fetch(`${API_URL}/Acceuils`)
       
       const data = await res.json()

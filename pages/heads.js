@@ -2,7 +2,9 @@ import React from "react";
 import Link from "next/link";
 
 
-export default function Header(){
+const Header = ({logo})=>{
+
+  console.log(logo);
 
     return(
     <header className="header-desktop header-1 d-none d-lg-block">
@@ -133,3 +135,21 @@ export default function Header(){
 
     )
 }
+
+export async function getServerSideProps(){
+  //const {API_URL}=process.env
+  
+     const res = await fetch('http://localhost:1337/logo')
+    //const res = await fetch(`${API_URL}/home`)
+    
+    const data = await res.json()
+  
+    return{
+      props:{
+        logo:data
+      }
+  
+    }
+  }
+
+export default Header
