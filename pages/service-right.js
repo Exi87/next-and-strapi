@@ -16,7 +16,7 @@ export default function ServiceRight(props) {
                                 src={props.ServiceRightDescription.imageRightMariage}
 
                                 
-                                alt="Fashion" />
+                                alt="Mariage" />
                                 </a>
                             </Link>
                             </div>
