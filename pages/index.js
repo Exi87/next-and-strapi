@@ -60,7 +60,7 @@ console.log(acceuil);
                 <div className="image">
                   <a href="blog-detail.html">
                     <img
-                      src="https://res.cloudinary.com/duwas1k3k/image/upload/v1606753174/blog-01_lvqjmh.jpg"
+                      src={acceuil.homeImage.url}
                       alt="PHOTOGRAPHY IS A FORM OF TIME TRAVEL"
                     />
                   </a>
@@ -97,7 +97,7 @@ console.log(acceuil);
 export async function getServerSideProps(){
 //const {API_URL}=process.env
 
-   const res = await fetch('http://localhost:1337/home')
+   const res = await fetch(' https://strapi-atlass.herokuapp.com/home')
   //const res = await fetch(`${API_URL}/home`)
   
   const data = await res.json()

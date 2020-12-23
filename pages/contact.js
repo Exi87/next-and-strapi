@@ -2,7 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Header from './heads'
 import Footer from './footer'
-export default function Contact(){
+
+
+
+const Contact =({contact})=>{
+
+    console.log(contact);
 
     return(
 <div>
@@ -23,7 +28,7 @@ export default function Contact(){
                     <div class="col-lg-6">
                         <div class="contact__image">
                             <img 
-                            src="" alt="Victor Umber" />
+                            src={contact.contactImage.url} alt="Contact image" />
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -40,15 +45,15 @@ export default function Contact(){
                                 <h3>contact info</h3>
                                 <ul class="list-unstyled contact-info__list">
                                     <li>
-                                        <i class="fas fa-home"></i>#33 rue la paix , Delmas 33 , HAITI</li>
+                                        <i class="fas fa-home"></i>{contact.contactPhone}</li>
                                     <li>
-                                        <i class="fas fa-phone"></i>(+509) 4744 43 98</li>
+                                        <i class="fas fa-phone"></i>{contact.contactAddress}</li>
                                     <li>
-                                        <i class="fas fa-envelope"></i><a href="merziuslouisjunior@gmail.com" class="__cf_email__" >merziuslouisjunior@gmail.com</a></li>
+                                        <i class="fas fa-envelope"></i><a href="merziuslouisjunior@gmail.com" class="__cf_email__" ></a>{contact.contactEmail}</li>
                                 </ul>
                             </div>
                         </div>
-                        <h3 class="title title--dark title--semibold m-b-35">send us message</h3>
+                         <h3 class="title title--dark title--semibold m-b-35">send us message</h3>
                         <form class="form-contact js-contact-form" method="POST" action="https://freebw.com/templates/umber/includes/contact-form.php">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -64,7 +69,7 @@ export default function Contact(){
                                 </div>
                             </div>
                             <button class="au-btn au-btn--dark au-btn--p70 m-t-30" type="submit">send</button>
-                        </form>
+                        </form> 
                     </div>
                 </div>
             </div>
@@ -74,3 +79,20 @@ export default function Contact(){
        </div>
     )
 }
+export async function getServerSideProps(){
+   
+    
+    const res = await fetch(' https://strapi-atlass.herokuapp.com/contact-info')
+   //const res = await fetch(`${API_URL}/Acceuils`)
+   
+   const data = await res.json()
+ 
+   return{
+     props:{
+        contact:data
+     }
+ 
+   }
+ }
+
+export default Contact

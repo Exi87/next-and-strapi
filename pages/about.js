@@ -104,7 +104,7 @@ const  About =({about}) =>{
 export async function getServerSideProps(){
    
     
-       const res = await fetch('http://localhost:1337/about')
+       const res = await fetch(' https://strapi-atlass.herokuapp.com/about')
       //const res = await fetch(`${API_URL}/Acceuils`)
       
       const data = await res.json()

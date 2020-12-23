@@ -74,7 +74,7 @@ const  Service = ({service}) =>{
 export async function getServerSideProps(){
     //const {API_URL}=process.env
     
-       const res = await fetch('http://localhost:1337/service-description')
+       const res = await fetch(' https://strapi-atlass.herokuapp.com/service-description')
       //const res = await fetch(`${API_URL}/home`)
       
       const data = await res.json()
